@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using proiectDaw.Models;
+using fantasyF1.Models;
 
-namespace proiectDaw
+namespace fantasyF1
 {
     public class EmailService : IIdentityMessageService
     {

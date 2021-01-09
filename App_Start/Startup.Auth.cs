@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using proiectDaw.Models;
+using fantasyF1.Models;
 
-namespace proiectDaw
+namespace fantasyF1
 {
     public partial class Startup
     {

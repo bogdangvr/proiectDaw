@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace proiectDaw.Controllers
+namespace fantasyF1.Controllers
 {
     public class HomeController : Controller
     {

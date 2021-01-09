@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(proiectDaw.Startup))]
-namespace proiectDaw
+[assembly: OwinStartupAttribute(typeof(fantasyF1.Startup))]
+namespace fantasyF1
 {
     public partial class Startup
     {

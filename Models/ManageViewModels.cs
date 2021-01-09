@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace proiectDaw.Models
+namespace fantasyF1.Models
 {
     public class IndexViewModel
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace proiectDaw.Models
+namespace fantasyF1.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

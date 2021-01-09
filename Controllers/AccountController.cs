@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using proiectDaw.Models;
+using fantasyF1.Models;
 
-namespace proiectDaw.Controllers
+namespace fantasyF1.Controllers
 {
     [Authorize]
     public class AccountController : Controller

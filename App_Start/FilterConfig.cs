@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace proiectDaw
+namespace fantasyF1
 {
     public class FilterConfig
     {
