@@ -1,0 +1,35 @@
+﻿@model fantasyF1.Models.Driver
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Driver details</h2>
+
+@Html.Label("Name", "Name:")
+<p>@Model.Name</p>
+
+<br />
+
+@Html.Label("Number", "Number:")
+<p>@Model.Number</p>
+
+<br />
+
+@Html.Label("Nationality", "Nationality:")
+<p>@Model.Nationality</p>
+
+<br />
+
+@Html.Label("Price", "Price:")
+<p>@Model.Price $</p>
+
+<br />
+
+@Html.Label("ExpectedFinish", "Expected Finish:")
+<p>@Model.ExpectedFinish</p>
+
+<br />
+
+@Html.Label("Points", "Points:")
+<p>@Model.Points</p>

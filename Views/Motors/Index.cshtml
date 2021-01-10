@@ -1,0 +1,49 @@
+﻿@using fantasyF1.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Motors</h2>
+
+
+@foreach (var motor in ViewBag.Motors)
+{
+    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+
+        @Html.Label("Name", "Name:")
+        <p>@motor.Name</p>
+
+        <br />
+
+        @Html.Label("Price", "Price:")
+        <p>@motor.Price $</p>
+
+        <br />
+
+        @Html.Label("ExpectedFinish", "Expected Finish:")
+        <p>@motor.ExpectedFinish</p>
+
+        <br />
+
+        @Html.Label("Points", "Points:")
+        <p>@motor.Points</p>
+
+        <br />
+        @if (User.IsInRole("Administrator"))
+        {
+            <a href="/motors/edit/@motor.MotorId" class="btn btn-warning">Edit</a>
+
+            <br />
+            <br />
+
+            <a href="/motors/delete/@motor.MotorId" class="btn btn-danger">Delete</a>
+        }
+
+    </div>
+}
+
+@if (User.IsInRole("Administrator"))
+{
+    <a href="/motors/create" class="btn btn-success">Create Motor</a>
+}

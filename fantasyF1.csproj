@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{23C428B4-492D-44E8-90A4-97FA0BA02E3F}</ProjectGuid>
+    <ProjectGuid>{60AA3957-6ECC-43D3-8CD7-F1FE988C1FB6}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44394</IISExpressSSLPort>
+    <IISExpressSSLPort>44337</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -169,23 +169,47 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MotorsController.cs" />
+    <Compile Include="Controllers\RostersController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101101108131_first_migration.cs" />
-    <Compile Include="Migrations\202101101108131_first_migration.designer.cs">
-      <DependentUpon>202101101108131_first_migration.cs</DependentUpon>
+    <Compile Include="Migrations\202101101720522_first-migration.cs" />
+    <Compile Include="Migrations\202101101720522_first-migration.designer.cs">
+      <DependentUpon>202101101720522_first-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101722496_second-migration.cs" />
+    <Compile Include="Migrations\202101101722496_second-migration.designer.cs">
+      <DependentUpon>202101101722496_second-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101800230_third-migration.cs" />
+    <Compile Include="Migrations\202101101800230_third-migration.designer.cs">
+      <DependentUpon>202101101800230_third-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101816425_forth-migration.cs" />
+    <Compile Include="Migrations\202101101816425_forth-migration.designer.cs">
+      <DependentUpon>202101101816425_forth-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101839030_fifth-migration.cs" />
+    <Compile Include="Migrations\202101101839030_fifth-migration.designer.cs">
+      <DependentUpon>202101101839030_fifth-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101931304_sixth-migration.cs" />
+    <Compile Include="Migrations\202101101931304_sixth-migration.designer.cs">
+      <DependentUpon>202101101931304_sixth-migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Driver.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\League.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Motor.cs" />
-    <Compile Include="Models\PastExperience.cs" />
     <Compile Include="Models\Roster.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\UserViewModel.cs" />
@@ -248,9 +272,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Drivers\Create.cshtml" />
+    <Content Include="Views\Drivers\Edit.cshtml" />
+    <Content Include="Views\Drivers\Index.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Drivers\Details.cshtml" />
+    <Content Include="Views\Teams\Create.cshtml" />
+    <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\Teams\Edit.cshtml" />
+    <Content Include="Views\Motors\Create.cshtml" />
+    <Content Include="Views\Motors\Edit.cshtml" />
+    <Content Include="Views\Motors\Index.cshtml" />
+    <Content Include="Views\Rosters\Create.cshtml" />
+    <Content Include="Views\Rosters\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -269,8 +305,23 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101101108131_first_migration.resx">
-      <DependentUpon>202101101108131_first_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101101720522_first-migration.resx">
+      <DependentUpon>202101101720522_first-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101722496_second-migration.resx">
+      <DependentUpon>202101101722496_second-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101800230_third-migration.resx">
+      <DependentUpon>202101101800230_third-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101816425_forth-migration.resx">
+      <DependentUpon>202101101816425_forth-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101839030_fifth-migration.resx">
+      <DependentUpon>202101101839030_fifth-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101931304_sixth-migration.resx">
+      <DependentUpon>202101101931304_sixth-migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -289,9 +340,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52787</DevelopmentServerPort>
+          <DevelopmentServerPort>51437</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44394/</IISUrl>
+          <IISUrl>https://localhost:44337/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

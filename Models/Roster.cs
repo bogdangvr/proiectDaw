@@ -12,6 +12,8 @@ namespace fantasyF1.Models
         [Key]
         public int RosterId { get; set; }
         public int Points { get; set; }
+        public int Price { get; set; }
+        public string User { get; set; }
         [Required]
         public string UniqueCode { get; set; }
         public int TeamId { get; set; }
@@ -20,7 +22,9 @@ namespace fantasyF1.Models
         public int MotorId { get; set; }
         [ForeignKey("MotorId")]
         public virtual Motor Motor { get; set; }
-        public virtual ICollection<Driver> Drivers { get; set; }
+        public int DriverId { get; set; }
+        [ForeignKey("DriverId")]
+        public virtual Driver Driver { get; set; }
 
     }
 }

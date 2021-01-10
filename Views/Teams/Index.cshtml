@@ -1,0 +1,48 @@
+﻿@using fantasyF1.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Teams</h2>
+
+
+@foreach (var team in ViewBag.Teams)
+{
+    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+
+        @Html.Label("Name", "Name:")
+        <p>@team.Name</p>
+
+        <br />
+
+        @Html.Label("Price", "Price:")
+        <p>@team.Price $</p>
+
+        <br />
+
+        @Html.Label("ExpectedFinish", "Expected Finish:")
+        <p>@team.ExpectedFinish</p>
+
+        <br />
+
+        @Html.Label("Points", "Points:")
+        <p>@team.Points</p>
+
+        <br />
+        @if (User.IsInRole("Administrator"))
+        {
+            <a href="/teams/edit/@team.TeamId" class="btn btn-warning">Edit</a>
+
+            <br />
+            <br />
+
+            <a href="/teams/delete/@team.TeamId" class="btn btn-danger">Delete</a>
+        }
+
+    </div>
+}
+
+@if (User.IsInRole("Administrator")) { 
+    <a href="/teams/create" class="btn btn-success">Create team</a>
+}
