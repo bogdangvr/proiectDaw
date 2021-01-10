@@ -16,11 +16,18 @@ namespace fantasyF1.Models
             // Add custom user claims here
             return userIdentity;
         }
+        
+        public string Address { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Roster> Rosters { get; set; }
+        public DbSet<Driver> Drivers { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Motor> Motors { get; set; }
+        public DbSet<PastExperience> PastExperiences { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

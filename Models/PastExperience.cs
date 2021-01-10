@@ -11,7 +11,7 @@ namespace fantasyF1.Models
     public class PastExperience
     {
         [Key]
-        public int PastExperienceId { get; set; }
+        public int DriverId { get; set; }
         public string Description { get; set; }
         public string JuniorExperience { get; set; }
         public string FirstRace { get; set; }
