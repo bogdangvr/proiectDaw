@@ -24,10 +24,6 @@ namespace fantasyF1.Models
         public int ExpectedFinish { get; set; }
         [Required]
         public int Points { get; set; }
-        /*[Required]
-        public int TeamId { get; set; }
-        [ForeignKey("TeamId")]
-        public virtual Team Team { get; set; }*/
         public virtual PastExperience PastExperience { get; set; }
         public virtual ICollection<Roster> Rosters { get; set; }
 

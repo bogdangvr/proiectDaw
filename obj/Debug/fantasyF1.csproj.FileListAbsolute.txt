@@ -108,4 +108,3 @@ D:\Workspace\Anul 3\DAW\fantasyF1\obj\Debug\fantasyF1.dll
 D:\Workspace\Anul 3\DAW\fantasyF1\obj\Debug\fantasyF1.pdb
 D:\Workspace\Anul 3\DAW\fantasyF1\obj\Debug\fantasyF1.Migrations.first_migration.resources
 D:\Workspace\Anul 3\DAW\fantasyF1\obj\Debug\fantasyF1.csproj.GenerateResource.cache
-D:\Workspace\Anul 3\DAW\fantasyF1\obj\Debug\fantasyF1.Migrations.second_migration.resources
