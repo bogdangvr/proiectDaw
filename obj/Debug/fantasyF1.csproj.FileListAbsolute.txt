@@ -113,3 +113,6 @@ D:\Workspace\Anul 3\DAW\proiectFinal\fantasyF1\obj\Debug\fantasyF1.Migrations.th
 D:\Workspace\Anul 3\DAW\proiectFinal\fantasyF1\obj\Debug\fantasyF1.Migrations.forthmigration.resources
 D:\Workspace\Anul 3\DAW\proiectFinal\fantasyF1\obj\Debug\fantasyF1.Migrations.fifthmigration.resources
 D:\Workspace\Anul 3\DAW\proiectFinal\fantasyF1\obj\Debug\fantasyF1.Migrations.sixthmigration.resources
+D:\Workspace\Anul 3\DAW\proiectFinal\fantasyF1\obj\Debug\fantasyF1.Migrations.seventhmigration.resources
+D:\Workspace\Anul 3\DAW\proiectFinal\fantasyF1\obj\Debug\fantasyF1.Migrations.eigth_migration.resources
+D:\Workspace\Anul 3\DAW\proiectFinal\fantasyF1\obj\Debug\fantasyF1.Migrations.ninthmigration.resources

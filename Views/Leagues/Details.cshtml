@@ -1,0 +1,27 @@
+﻿@model fantasyF1.Models.League
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Accepted rosters in @Model.Name</h2>
+
+@foreach (var roster in Model.Rosters)
+{
+<div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+
+    @Html.Label("User", "User:")
+    <p>@roster.User</p>
+
+    <br />
+
+    @Html.Label("Price", "Price:")
+    <p>@roster.User</p>
+
+    <br />
+
+    @Html.Label("UniqueCode", "UniqueCode:")
+    <p>@roster.UniqueCode</p>
+
+</div>
+}

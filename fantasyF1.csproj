@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LeaguesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MotorsController.cs" />
     <Compile Include="Controllers\RostersController.cs" />
@@ -202,6 +203,18 @@
     <Compile Include="Migrations\202101101931304_sixth-migration.cs" />
     <Compile Include="Migrations\202101101931304_sixth-migration.designer.cs">
       <DependentUpon>202101101931304_sixth-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101102056060_seventh-migration.cs" />
+    <Compile Include="Migrations\202101102056060_seventh-migration.designer.cs">
+      <DependentUpon>202101102056060_seventh-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101102318322_eigth_migration.cs" />
+    <Compile Include="Migrations\202101102318322_eigth_migration.designer.cs">
+      <DependentUpon>202101102318322_eigth_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101110040256_ninth-migration.cs" />
+    <Compile Include="Migrations\202101110040256_ninth-migration.designer.cs">
+      <DependentUpon>202101110040256_ninth-migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -287,6 +300,9 @@
     <Content Include="Views\Motors\Index.cshtml" />
     <Content Include="Views\Rosters\Create.cshtml" />
     <Content Include="Views\Rosters\Index.cshtml" />
+    <Content Include="Views\Leagues\Index.cshtml" />
+    <Content Include="Views\Leagues\Create.cshtml" />
+    <Content Include="Views\Leagues\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -322,6 +338,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101101931304_sixth-migration.resx">
       <DependentUpon>202101101931304_sixth-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101102056060_seventh-migration.resx">
+      <DependentUpon>202101102056060_seventh-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101102318322_eigth_migration.resx">
+      <DependentUpon>202101102318322_eigth_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101110040256_ninth-migration.resx">
+      <DependentUpon>202101110040256_ninth-migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

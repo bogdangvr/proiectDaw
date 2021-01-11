@@ -1,0 +1,82 @@
+﻿@using fantasyF1.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Leagues</h2>
+
+
+@foreach (var league in ViewBag.Leagues)
+{
+    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+
+        @Html.Label("User", "User who created the roster:")
+        <p>@league.Name</p>
+
+        <br />
+
+        @Html.Label("Prize", "Prize:")
+        <p>@league.Prize</p>
+
+        <br />
+
+        @Html.Label("AllowedDriver", "Allowed Driver:")
+        @if (league.AllowedDriver != null)
+        {
+
+            <p>@league.AllowedDriver</p>
+        }
+        else
+        {
+            <p>All drivers are allowed</p>
+        }
+
+        <br />
+
+        @Html.Label("AllowedTeam", "Allowed Team:")
+        @if (league.AllowedTeam != null)
+        {
+
+            <p>@league.AllowedTeam</p>
+        }
+        else
+        {
+            <p>All teams are allowed</p>
+        }
+
+        <br />
+
+        @Html.Label("AllowedMotor", "Allowed Motor:")
+        @if (league.AllowedMotor != null)
+        {
+
+            <p>@league.AllowedMotor</p>
+        }
+        else
+        {
+            <p>All motors are allowed</p>
+        }
+
+        @if (User.IsInRole("Administrator"))
+        {
+            <a href="/leagues/details/@league.LeagueId" class="btn btn-warning">Accepted Rosters</a>
+
+            <br />
+            <br />
+
+            <a href="/leagues/delete/@league.LeagueId" class="btn btn-danger">Delete</a>
+
+            <br />
+            <br />
+
+            <a href="/leagues/update/@league.LeagueId" class="btn btn-success">Update league</a>
+        }
+
+    </div>
+
+}
+@if (User.IsInRole("Administrator"))
+{
+    <a href="/leagues/create/" class="btn btn-success">Create league</a>
+}

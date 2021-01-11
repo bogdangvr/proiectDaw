@@ -101,6 +101,7 @@ namespace fantasyF1.Controllers
                     oldDriver.Price = driver.Price;
                     oldDriver.Nationality = driver.Nationality;
                     oldDriver.ExpectedFinish = driver.ExpectedFinish;
+                    oldDriver.Points = driver.Points;
 
                     TryUpdateModel(oldDriver);
 
