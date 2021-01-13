@@ -4,46 +4,69 @@
     ViewBag.Title = "Index";
 }
 
+
 <h2>List of Motors</h2>
-
-
-@foreach (var motor in ViewBag.Motors)
+@if (User.IsInRole("Administrator"))
 {
-    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Logo</th>
+                <th scope="col">Price</th>
+                <th scope="col">Expected finish</th>
+                <th scope="col">Points</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
 
-        @Html.Label("Name", "Name:")
-        <p>@motor.Name</p>
+            @foreach (var motor in ViewBag.Motors)
+            {
+                <tr>
+                    <td>@motor.Name</td>
+                    <td><img style="width: 15%;" src="@motor.Photo"/></td>
+                    <td>@motor.Price</td>
+                    <td>@motor.ExpectedFinish</td>
+                    <td>@motor.Points</td>
+                    <td><a href="/motors/edit/@motor.MotorId" class="btn btn-warning">Edit</a></td>
+                    <td><a href="/motors/delete/@motor.MotorId" class="btn btn-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Logo</th>
+                <th scope="col">Price</th>
+                <th scope="col">Expected finish</th>
+                <th scope="col">Points</th>
 
-        <br />
+            </tr>
+        </thead>
+        <tbody>
 
-        @Html.Label("Price", "Price:")
-        <p>@motor.Price $</p>
-
-        <br />
-
-        @Html.Label("ExpectedFinish", "Expected Finish:")
-        <p>@motor.ExpectedFinish</p>
-
-        <br />
-
-        @Html.Label("Points", "Points:")
-        <p>@motor.Points</p>
-
-        <br />
-        @if (User.IsInRole("Administrator"))
-        {
-            <a href="/motors/edit/@motor.MotorId" class="btn btn-warning">Edit</a>
-
-            <br />
-            <br />
-
-            <a href="/motors/delete/@motor.MotorId" class="btn btn-danger">Delete</a>
-        }
-
-    </div>
+            @foreach (var motor in ViewBag.Motors)
+            {
+            <tr>
+                <td>@motor.Name</td>
+                <td><img style="width: 15%;" src="@motor.Photo" /></td>
+                <td>@motor.Price</td>
+                <td>@motor.ExpectedFinish</td>
+                <td>@motor.Points</td>
+            </tr>
+            }
+        </tbody>
+    </table>
 }
 
 @if (User.IsInRole("Administrator"))
 {
-    <a href="/motors/create" class="btn btn-success">Create Motor</a>
+    <a href="/motors/create" class="btn btn-success">Create motor</a>
 }

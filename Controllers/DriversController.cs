@@ -16,7 +16,7 @@ namespace fantasyF1.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var drivers = _context.Drivers.OrderBy(x => x.ExpectedFinish).ToList();
+            var drivers = _context.Drivers.OrderByDescending(x => x.Points).ThenBy(x => x.ExpectedFinish).ToList();
 
             ViewBag.Drivers = drivers;
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using fantasyF1.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace fantasyF1.Controllers
 {
@@ -60,7 +61,7 @@ namespace fantasyF1.Controllers
                 {
                     league.AllowedTeam = (Team)team[0];
                     league.AllowedTeamId = ((Team)team[0]).TeamId;
-                    rosterList = rosterList.Where(x => x.Motor.Name == AllowedTeam).ToList();
+                    rosterList = rosterList.Where(x => x.Team.Name == AllowedTeam).ToList();
                 }
                 var driver = _context.Drivers.ToList();
                 if (AllowedDriver != "")
@@ -71,9 +72,10 @@ namespace fantasyF1.Controllers
                 {
                     league.AllowedDriver = (Driver)driver[0];
                     league.AllowedDriverId = ((Driver)driver[0]).DriverId;
-                    rosterList = rosterList.Where(x => x.Motor.Name == AllowedDriver).ToList();
+                    rosterList = rosterList.Where(x => x.Driver.Name == AllowedDriver).ToList();
                 }
                 league.Rosters = rosterList;
+                league.CreatedTime = System.DateTime.Now;
 
                 _context.Leagues.Add(league);
 
@@ -113,15 +115,15 @@ namespace fantasyF1.Controllers
                 var rosters = _context.Rosters.ToList();
                 if (league.AllowedDriver != null)
                 {
-                    rosters = _context.Rosters.Where(x => x.Driver == league.AllowedDriver).ToList();
+                    rosters = rosters.Where(x => x.Driver == league.AllowedDriver).ToList();
                 }
-                if (league.AllowedDriver != null)
+                if (league.AllowedTeam != null)
                 {
-                    rosters = _context.Rosters.Where(x => x.Team == league.AllowedTeam).ToList();
+                    rosters = rosters.Where(x => x.Team == league.AllowedTeam).ToList();
                 }
-                if (league.AllowedDriver != null)
+                if (league.AllowedMotor != null)
                 {
-                    rosters = _context.Rosters.Where(x => x.Motor == league.AllowedMotor).ToList();
+                    rosters = rosters.Where(x => x.Motor == league.AllowedMotor).ToList();
                 }
                 league.Rosters = rosters;
 
@@ -136,6 +138,61 @@ namespace fantasyF1.Controllers
             }
 
             return View(league);
+        }
+
+        // GET: /leagues/refresh
+        [HttpGet]
+        public ActionResult Refresh()
+        {
+            var leagues = _context.Leagues.ToList();
+            try
+            {
+                foreach (League league in leagues)
+                {
+                    League newLeague = new League();
+                    var rosters = _context.Rosters.ToList();
+                    if (league.AllowedDriver != null)
+                    {
+                        rosters = rosters.Where(x => x.Driver == league.AllowedDriver).ToList();
+                    }
+                    if (league.AllowedTeam != null)
+                    {
+                        rosters = rosters.Where(x => x.Team == league.AllowedTeam).ToList();
+                    }
+                    if (league.AllowedMotor != null)
+                    {
+                        rosters = rosters.Where(x => x.Motor == league.AllowedMotor).ToList();
+                    }
+                    newLeague.AllowedDriver = league.AllowedDriver;
+                    newLeague.AllowedDriverId = league.AllowedDriverId;
+                    newLeague.AllowedMotor = league.AllowedMotor;
+                    newLeague.AllowedMotorId = league.AllowedMotorId;
+                    newLeague.AllowedTeam = league.AllowedTeam;
+                    newLeague.AllowedTeamId = league.AllowedTeamId;
+                    newLeague.Name = league.Name;
+                    newLeague.Prize = league.Prize;
+                    newLeague.Rosters = rosters;
+                    newLeague.LeagueId = league.LeagueId-1;
+                    var aux = _context.Leagues.ToList();
+                    _context.Leagues.Add(newLeague);
+                    var aux1 = _context.Leagues.ToList();
+                    _context.Leagues.Remove(league);
+                    _context.SaveChanges();
+                    var aux2 = _context.Leagues.ToList();
+
+                }
+
+                _context.SaveChanges();
+
+                return RedirectToAction("Index", "Leagues");
+
+            }
+            catch (Exception e)
+            {
+                return Json(new { error_message = e.Message }, JsonRequestBehavior.AllowGet);
+            }
+
+            return View(leagues);
         }
 
         // GET: /leagues/details/{id}

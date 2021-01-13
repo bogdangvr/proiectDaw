@@ -16,7 +16,7 @@ namespace fantasyF1.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var rosters = _context.Rosters.OrderBy(x => x.Points).ToList();
+            var rosters = _context.Rosters.OrderByDescending(x => x.Points).ToList();
 
             ViewBag.Rosters = rosters;
 
@@ -150,7 +150,7 @@ namespace fantasyF1.Controllers
             return View(roster);
         }
 
-        // GET: /rosters/edit
+        // GET: /rosters/update
         [HttpGet]
         [Authorize(Roles = "Administrator")]
         public ActionResult Update(Roster roster)

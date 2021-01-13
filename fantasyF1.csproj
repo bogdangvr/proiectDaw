@@ -177,6 +177,7 @@
     <Compile Include="Controllers\RostersController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="CustomValidation\DateValidation.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -215,6 +216,26 @@
     <Compile Include="Migrations\202101110040256_ninth-migration.cs" />
     <Compile Include="Migrations\202101110040256_ninth-migration.designer.cs">
       <DependentUpon>202101110040256_ninth-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131350043_tenth-migration.cs" />
+    <Compile Include="Migrations\202101131350043_tenth-migration.designer.cs">
+      <DependentUpon>202101131350043_tenth-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131411228_eleventh-migration.cs" />
+    <Compile Include="Migrations\202101131411228_eleventh-migration.designer.cs">
+      <DependentUpon>202101131411228_eleventh-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131634066_twelfth-migration.cs" />
+    <Compile Include="Migrations\202101131634066_twelfth-migration.designer.cs">
+      <DependentUpon>202101131634066_twelfth-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131815104_thirteenth-migration.cs" />
+    <Compile Include="Migrations\202101131815104_thirteenth-migration.designer.cs">
+      <DependentUpon>202101131815104_thirteenth-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131818066_fourteenth-migration.cs" />
+    <Compile Include="Migrations\202101131818066_fourteenth-migration.designer.cs">
+      <DependentUpon>202101131818066_fourteenth-migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -347,6 +368,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101110040256_ninth-migration.resx">
       <DependentUpon>202101110040256_ninth-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131350043_tenth-migration.resx">
+      <DependentUpon>202101131350043_tenth-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131411228_eleventh-migration.resx">
+      <DependentUpon>202101131411228_eleventh-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131634066_twelfth-migration.resx">
+      <DependentUpon>202101131634066_twelfth-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131815104_thirteenth-migration.resx">
+      <DependentUpon>202101131815104_thirteenth-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131818066_fourteenth-migration.resx">
+      <DependentUpon>202101131818066_fourteenth-migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

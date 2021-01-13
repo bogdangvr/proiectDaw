@@ -2,16 +2,27 @@
     ViewBag.Title = "Contact";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<html>
+<head>
+    <title>Add Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+            defer></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+    <address>
+        Str Vasile Adam 8, District <br />
+        Bucharest, Romania<br />
+        <abbr title="Phone">P:</abbr>
+        0760 609 079
+    </address>
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@fantasyf1.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@fantasyf1.com</a>
+    </address>
+</body>
+</html>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
