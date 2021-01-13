@@ -23,9 +23,8 @@ namespace fantasyF1.Models
         [Required]
         public int ExpectedFinish { get; set; }
         [Required]
+        [Range(0, 10000)]
         public int Points { get; set; }
-        public virtual PastExperience PastExperience { get; set; }
-        public virtual ICollection<Roster> Rosters { get; set; }
 
     }
 }

@@ -1,0 +1,45 @@
+﻿@using fantasyF1.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Rosters</h2>
+
+
+@foreach (var roster in ViewBag.Rosters)
+{
+<div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+
+    @Html.Label("User", "User who created the roster:")
+    <p>@roster.User</p>
+
+    <br />
+
+    @Html.Label("Price", "Price:")
+    <p>@roster.Price $</p>
+
+    <br />
+
+    @Html.Label("UniqueCode", "Unique Code:")
+    <p>@roster.UniqueCode</p>
+
+    <br />
+
+    @Html.Label("Points", "Points:")
+    <p>@roster.Points</p>
+
+    @if (User.IsInRole("Administrator"))
+    {
+
+        <br />
+        <br />
+
+        <a href="/rosters/delete/@roster.RosterId" class="btn btn-danger">Delete</a>
+    }
+
+</div>
+}
+
+
+<a href="/rosters/create" class="btn btn-success">Create roster</a>

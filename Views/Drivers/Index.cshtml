@@ -1,0 +1,46 @@
+﻿@using fantasyF1.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Drivers</h2>
+
+
+@foreach (var driver in ViewBag.Drivers)
+{
+    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+
+        @Html.Label("Name", "Name:")
+        <p>@driver.Name</p>
+
+        <br />
+
+        @using (Html.BeginForm(actionName: "Details",
+        controllerName: "Drivers",
+        method: FormMethod.Get,
+        routeValues: new { id = driver.DriverId }))
+        {
+            <button class="btn btn-info">Details</button>
+
+        }
+
+        <br />
+        @if (User.IsInRole("Administrator"))
+        {
+            <a href="/drivers/edit/@driver.DriverId" class="btn btn-warning">Edit</a>
+
+            <br />
+            <br />
+
+            <a href="/drivers/delete/@driver.DriverId" class="btn btn-danger">Delete</a>
+        }
+        <br />
+
+    </div>
+}
+
+@if (User.IsInRole("Administrator"))
+{
+    <a href="/drivers/create" class="btn btn-success">Create driver</a>
+}

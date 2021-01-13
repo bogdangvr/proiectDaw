@@ -20,7 +20,7 @@ namespace fantasyF1
         private void SeedUserRolesAndAdministrator()
         {
             var context = new ApplicationDbContext();
-            
+
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 

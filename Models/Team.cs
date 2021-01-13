@@ -16,9 +16,9 @@ namespace fantasyF1.Models
         [Required]
         public int ExpectedFinish { get; set; }
         [Required]
+        [Range(0, 10000)]
         public int Points { get; set; }
         [Required]
         public int Price { get; set; }
-        public virtual ICollection<Driver> Drivers { get; set; }
     }
 }
