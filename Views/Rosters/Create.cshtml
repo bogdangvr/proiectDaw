@@ -1,0 +1,48 @@
+﻿@model fantasyF1.Models.Roster
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create your roster!</h2>
+
+<br />
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="DriverName">DriverName</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" name="DriverName" type="text" value=""/>
+                <span class="field-validation-vali dtext-danger" data-valmsg-for="DriverName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="TeamName">TeamName</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" name="TeamName" type="text" value="" />
+                <span class="field-validation-vali dtext-danger" data-valmsg-for="TeamName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="MotorName">MotorName</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" name="MotorName" type="text" value="" />
+                <span class="field-validation-vali dtext-danger" data-valmsg-for="MotorName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </div>
+
+    </div>
+}
+
+

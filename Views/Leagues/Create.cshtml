@@ -1,0 +1,64 @@
+﻿@model fantasyF1.Models.League
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create your league!</h2>
+
+<br />
+
+@using (Html.BeginForm())
+{
+<div class="form-horizontal">
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Name, new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Prize, new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(x => x.Prize, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Prize, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="AllowedDriver">AllowedDriver</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" name="AllowedDriver" type="text" value="" />
+            <span class="field-validation-vali dtext-danger" data-valmsg-for="AllowedDriver" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="AllowedTeam">AllowedTeam</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" name="AllowedTeam" type="text" value="" />
+            <span class="field-validation-vali dtext-danger" data-valmsg-for="AllowedTeam" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="AllowedMotor">AllowedMotor</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" name="AllowedMotor" type="text" value="" />
+            <span class="field-validation-vali dtext-danger" data-valmsg-for="MotorAllowedMotorAllowed" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <input type="submit" value="Add" class="btn btn-primary" />
+        </div>
+    </div>
+
+</div>
+}
+
+

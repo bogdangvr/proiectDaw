@@ -5,6 +5,7 @@ using System.Web;
 using System.Data;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using fantasyF1.CustomValidation;
 
 namespace fantasyF1.Models
 {
@@ -21,6 +22,8 @@ namespace fantasyF1.Models
         public int? AllowedMotorId { get; set; }
         public virtual Motor AllowedMotor { get; set; }
         public string Prize { get; set; }
+        [DateValidation(ErrorMessage = "Impossible")]
+        public DateTime CreatedTime { get; set; }
 
         public virtual ICollection<Roster> Rosters { get; set; }
     }

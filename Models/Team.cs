@@ -16,6 +16,7 @@ namespace fantasyF1.Models
         [Required]
         [Range(1, 10, ErrorMessage = "Expected finish must be between 1 and 10")]
         public int ExpectedFinish { get; set; }
+        public string Photo { get; set; }
         [Required]
         [Range(0, 10000)]
         public int Points { get; set; }

@@ -19,6 +19,7 @@ namespace fantasyF1.Models
         [Required]
         [Range(1, Int32.MaxValue)]
         public int Price { get; set; }
+        public string Photo { get; set; }
         [Required]
         [Range(0, 10000)]
         public int Points { get; set; }

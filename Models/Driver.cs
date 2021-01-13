@@ -21,6 +21,7 @@ namespace fantasyF1.Models
         public int Price { get; set; }
         [Required]
         public string Nationality { get; set; }
+        public string Photo { get; set; }
         [Required]
         [Range(1, 20, ErrorMessage = "Expected finish must be between 1 and 20")]
         public int ExpectedFinish { get; set; }

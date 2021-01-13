@@ -1,0 +1,56 @@
+﻿@model fantasyF1.Models.Team
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit team</h2>
+
+<br />
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+
+        @Html.HiddenFor(x => x.TeamId)
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name, new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Price, new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.ExpectedFinish, new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(x => x.ExpectedFinish, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.ExpectedFinish, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Points, new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(x => x.Points, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Points, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div>
+        </div>
+
+    </div>
+}
