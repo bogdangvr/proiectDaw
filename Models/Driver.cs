@@ -17,15 +17,16 @@ namespace fantasyF1.Models
         [Required]
         public int Number { get; set; }
         [Required]
+        [Range(1, Int32.MaxValue)]
         public int Price { get; set; }
         [Required]
         public string Nationality { get; set; }
         [Required]
+        [Range(1, 20, ErrorMessage = "Expected finish must be between 1 and 20")]
         public int ExpectedFinish { get; set; }
         [Required]
+        [Range(0, 10000)]
         public int Points { get; set; }
-        public virtual PastExperience PastExperience { get; set; }
-        public virtual ICollection<Roster> Rosters { get; set; }
 
     }
 }

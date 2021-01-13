@@ -14,11 +14,13 @@ namespace fantasyF1.Models
         [Required]
         public string Name { get; set; }
         [Required]
+        [Range(1, 10, ErrorMessage = "Expected finish must be between 1 and 10")]
         public int ExpectedFinish { get; set; }
         [Required]
+        [Range(0, 10000)]
         public int Points { get; set; }
         [Required]
+        [Range(1, Int32.MaxValue)]
         public int Price { get; set; }
-        public virtual ICollection<Driver> Drivers { get; set; }
     }
 }
