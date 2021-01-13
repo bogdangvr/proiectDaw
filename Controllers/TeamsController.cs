@@ -16,7 +16,7 @@ namespace fantasyF1.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var team = _context.Teams.OrderBy(x => x.ExpectedFinish).ToList();
+            var team = _context.Teams.OrderByDescending(x => x.Points).ThenBy(x => x.ExpectedFinish).ToList();
 
             ViewBag.Teams = team;
 

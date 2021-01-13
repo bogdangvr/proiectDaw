@@ -17,7 +17,7 @@ namespace fantasyF1.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var motor = _context.Motors.OrderBy(x => x.ExpectedFinish).ToList();
+            var motor = _context.Motors.OrderByDescending(x => x.Points).ThenBy(x => x.ExpectedFinish).ToList();
 
             ViewBag.Motors = motor;
 
@@ -77,7 +77,7 @@ namespace fantasyF1.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var oldMotor = _context.Teams.Find(motor.MotorId);
+                    var oldMotor = _context.Motors.Find(motor.MotorId);
 
                     if (oldMotor == null)
                     {

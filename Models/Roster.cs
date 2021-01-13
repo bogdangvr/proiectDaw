@@ -21,6 +21,7 @@ namespace fantasyF1.Models
         public virtual Motor Motor { get; set; }
         public int DriverId { get; set; }
         public virtual Driver Driver { get; set; }
+        public virtual ICollection<League> Leagues { get; set; }
 
     }
 }
